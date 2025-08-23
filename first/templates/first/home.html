@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% block content %}
+        <h1>Welcome to the Home Page</h1>
+        <p>This is the home page of your Django application.</p>
+        {% for task in tasks %}
+            {% csrf_token %}
+            <div>
+                <h2> {{task.title}} </h2>
+                <P> {{task.description}} </p>
+                <P> {{task.completed}} </p>
+            </div>
+        
+
+        
+        <button>
+            <a href="{% url 'delete' task.id %}">Delete Task</a>
+        </button>
+        <button>    
+            <a href="{% url 'update' task.id %}">Update Task</a>
+        </button>
+        {% endfor %}
+        {% endblock %}
+        <br><br><br>
+        <button>
+            <a href="{% url 'add' %}">Create Task</a>
+        </button>
+    </body>
+</html>
