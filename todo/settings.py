@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-20i85&oax7mgt4j)v*g5fn8j8!sg@dm@!t2mbt$sae1n=4l$5x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'https://todoapp-production-e78e.up.railway.app']
+ALLOWED_HOSTS = ['*', 'https://todoapp-production-e78e.up.railway.app/']
 
 
 # Application definition
@@ -90,7 +90,7 @@ DATABASES = {
 '''
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
+        default=os.getenv("DATABASE_URL",  f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
         conn_max_age=600,
         ssl_require=True
     )
