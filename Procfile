@@ -1,2 +1,1 @@
-web: gunicorn todo.wsgi
-python manage.py collectstatic --noinput
+web: python manage.py collectstatic --noinput && gunicorn todo.wsgi
