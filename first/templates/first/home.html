@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        {% block content %}
+    {% block content %}
         <h1>Welcome to the Home Page</h1>
         <p>This is the home page of your Django application.</p>
         {% for task in tasks %}
@@ -32,7 +32,7 @@
             <a href="{% url 'update' task.id %}">Update Task</a>
         </button>
         {% endfor %}
-        {% endblock %}
+    {% endblock %}
         <br><br><br>
         <button>
             <a href="{% url 'add' %}">Create Task</a>
