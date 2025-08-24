@@ -10,5 +10,6 @@ tzdata==2025.2
 gunicorn
 psycopg2-binary
 whitenoise
-dj-database-url
+dj_database_url
 python-dotenv
+
