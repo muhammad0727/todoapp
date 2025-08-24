@@ -17,7 +17,6 @@
         <h1>Welcome to the Home Page</h1>
         <p>This is the home page of your Django application.</p>
         {% for task in tasks %}
-            {% csrf_token %}
             <div>
                 <h2> {{task.title}} </h2>
                 <P> {{task.description}} </p>
